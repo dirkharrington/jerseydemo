@@ -26,7 +26,7 @@ public class Resource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String plain() {
-        return String.format("Got it - hot redeploy - BOOM! %s and %s", fubar, p);
+        return String.format("fubar was injected with: %s, and %s was requested", fubar, p);
     }
     
     @GET
