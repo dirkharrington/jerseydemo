@@ -11,21 +11,23 @@ import org.glassfish.jersey.server.ResourceConfig;
  */
 public class Main extends ResourceConfig {
 
-    public Main() {
+    public Main()
+    {
         packages("com.dirk");
         
-        register(new AbstractBinder() {
+        register(new AbstractBinder()
+        {
             @Override
-            protected void configure() {
+            protected void configure()
+            {
                 bind("woot").named("FUBAR");
             }
             
-            private void _bindProperties(Properties props) {
-                for (Entry<Object, Object> p : props.entrySet()) {
+            private void _bindProperties(Properties props)
+            {
+                for (Entry<Object, Object> p : props.entrySet())
                     bind(p.getValue()).named((String) p.getKey());
-                }
             }
         }); 
     }
-    
 }
